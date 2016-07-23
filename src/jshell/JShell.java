@@ -57,7 +57,7 @@ public class JShell {
                 + ANSI_HOME);
     }
 
-    private boolean executeCommand(String command) {
+    private String executeCommand(String command) {
 
         StringBuffer output = new StringBuffer();
 
@@ -103,9 +103,7 @@ public class JShell {
             case "exit": {
                 return exit();
             }
-            default:{
-               return executeCommand(input);
-            }
+           
         }
         return false;
     }
