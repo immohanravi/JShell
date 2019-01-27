@@ -38,13 +38,13 @@ public class JShell {
 
     public JShell() {
         System.out.println(ANSI_GREEN + "Welcome to Shell");
-        System.out.println(ANSI_YELLOW + "Please help to get informations...\n");
+        System.out.println(ANSI_YELLOW + "Type help to get informations...\n");
         
         do {
             System.out.print(shell);
             input = in.nextLine();
             if (operations(input)) {
-
+                executeCommand(input);
             } else {
                 System.out.println(input + ": command not found");
             }
@@ -103,9 +103,10 @@ public class JShell {
             case "exit": {
                 return exit();
             }
+
            
         }
-        return false;
+        return true;
     }
 
     public boolean exit() {
