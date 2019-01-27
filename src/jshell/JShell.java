@@ -6,6 +6,7 @@
 package jshell;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Calendar;
 import java.util.Locale;
@@ -44,7 +45,7 @@ public class JShell {
             System.out.print(shell);
             input = in.nextLine();
             if (operations(input)) {
-                executeCommand(input);
+                System.out.println(executeCommand(input));
             } else {
                 System.out.println(input + ": command not found");
             }
@@ -74,7 +75,7 @@ public class JShell {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            return command+" command not found";
         }
 
         return output.toString();
